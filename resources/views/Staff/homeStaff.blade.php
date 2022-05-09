@@ -23,7 +23,7 @@
             <tbody>
               @foreach($docs as $doc)
               <tr>
-                <th scope="row"><a href="" class="election_link">{{ $doc->doc_name }}</a></th>
+                <th scope="row"><a href="{{ route('viewDocument',['id' => Crypt::encrypt($doc->id)])}}" class="election_link">{{ $doc->doc_name }}</a></th>
                 <td><span class="badge badge-pill success_badge">Valid</span></td>
                 <td>{{ date("g:i a", strtotime($doc->doc_start_time))  }}</td>
                 <td>{{ $doc->created_at->format('Y-m-d')  }}</td>

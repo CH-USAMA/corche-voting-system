@@ -25,11 +25,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // staff
 Route::get('/uploadDocument', [App\Http\Controllers\StaffController::class, 'uploadDocument'])->name('uploadDocument');
 Route::get('/editDocument/{id}', [App\Http\Controllers\DocumentController::class, 'editDocument'])->name('editDocument');
+Route::get('/viewDocument/{id}', [App\Http\Controllers\DocumentController::class, 'viewDocument'])->name('viewDocument'); //new route
+
 
 Route::post('/uploadDocument', [App\Http\Controllers\DocumentController::class, 'uploadDocumentsave'])->name('uploadDocumentsave');
 
 
 // Candidate
+Route::post('/dataListing', [App\Http\Controllers\DataListingController::class, 'dataListing'])->name('dataListing'); //new route
+Route::get('/dataListing',  [App\Http\Controllers\HomeController::class, 'index']); //new route
+
+
 // Route::get('/homeCandidate', [App\Http\Controllers\CandidateController::class, 'index'])->name('homeCandidate');
 
 
@@ -44,7 +50,7 @@ Route::post('/deleteCandidate', [App\Http\Controllers\AdminController::class, 'd
 
 
 Route::post('/getCandidate', [App\Http\Controllers\AdminController::class, 'getCandidate'])->name('getCandidate');
-Route::post('/getElectionCandidate', [App\Http\Controllers\DocumentController::class, 'getElectionCandidate'])->name('getElectionCandidate');
+Route::post('/getElectionCandidate', [App\Http\Controllers\DocumentController::class, 'getElectionCandidate'])->name('getElectionCandidate'); //new route
 
 // political party route here
 

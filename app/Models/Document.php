@@ -9,6 +9,6 @@ class Document extends Model
 {
     use HasFactory;
     protected $table = "document";
-    protected $fillable = ["provincia","canton","parroquia","circun","zona","junta_no","position","status","added_by","valid_votes","null_votes","blank_votes","doc_end_time","doc_start_time","report_disturbance","comments","doc_name","election"];
+    protected $fillable = ["provincia","canton","parroquia","circun","zona","junta_no","position","status","added_by","valid_votes","null_votes","blank_votes","doc_end_time","doc_start_time","report_disturbance","comments","doc_name","election","total_votes","file"];
 
 }

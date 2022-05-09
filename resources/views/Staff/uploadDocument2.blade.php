@@ -239,16 +239,31 @@
                             <div class="form-row mt-3 d-flex flex-row justify-content-between">
                                 <div class="form-group  Drag_drop_file">
                                     <img src="images/DropImage.png">
-                                    <p>Upload your document file here</p>
-                                    <input type="file" class="form-control d-none" id="file" name="file">
-                                    @error('file')
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                     @enderror
+                                    <p>Drag / Drop your document file here</p>
+                                    <input type="file" class="form-control d-none" id="Drag_drop_field" name="Drag_drop_file">
+
+                                </div>
+                                <div class="form-group  Scan_file">
+                                    <img src="images/Camera.png">
+                                    <p>Scan through camera</p>
+                                    <input type="file" class="form-control d-none" id="Scan_field" name="Scan_field">
+
                                 </div>
                                 
-                              
+                                <div class="input-group hdtuto control-group lst increment" >
+      <input type="file" name="filenames[]" class="myfrm form-control">
+      <div class="input-group-btn"> 
+        <button class="btn btn-success" type="button"><i class="fldemo glyphicon glyphicon-plus"></i>Add</button>
+      </div>
+    </div>
+    <div class="clone hide">
+      <div class="hdtuto control-group lst input-group" style="margin-top:10px">
+        <input type="file" name="filenames[]" class="myfrm form-control">
+        <div class="input-group-btn"> 
+          <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+        </div>
+      </div>
+    </div>
                             </div>
                       
                     </div>
@@ -286,18 +301,34 @@
 
         <script >
 
+// $(document).ready(function() {
+// // $("#uploadDocument").validate();
 
+
+// $("#uploadDocument").validate({
+//     rules: {
+//       position : {
+//         required: true,
+//       },
+//       circun: {
+//         required: true,
+//       },
+//     },
+//     messages : {
+//       position: {
+//         required: "Select Position"
+//       },
+//       circun: {
+//         required: "Select Circun",
+//       },
+     
+//     }
+//   });
+
+// });
 
 
 $(document).ready(function(){
-    $(".Drag_drop_file").click(function () {
-    $("#file")[0].click();
-});
-
-
-
-
-
     function fetchCandidates() {
         var position = $('#position');
         var provincia = $('#provincia');
@@ -335,7 +366,7 @@ $(document).ready(function(){
                     console.log(msg)
 
                     $('#total_voters').text(msg.total_voters);
-                    $('#total_votes').val(msg.total_voters);
+                    $('#total_votes').text(msg.total_voters);
                     $('#total_candidates').val(msg.total_candidates);                    
                     $('#allCandidates').html(msg.candidates_name)
                    
@@ -388,7 +419,7 @@ $(document).ready(function(){
                     console.log(msg)
 
                     $('#total_voters').text(msg.total_voters);
-                    $('#total_votes').val(msg.total_voters);
+                    $('#total_votes').text(msg.total_voters);
                     $('#total_candidates').val(msg.total_candidates);
                     $('#allCandidates').html(msg.candidates_name)
                    
@@ -404,5 +435,24 @@ $(document).ready(function(){
 
 
 
+<!-- <script>
+    $(function(){
+    $('.selection').click(function(){
+    var count = 0;
 
+
+    $('select').each(function(){
+      
+    if($(this).val() != null){
+       count ++; 
+     }
+     
+  })
+    if(count == 4) {
+      console.log('all selected');
+    }
+  })
+  
+})
+</script> -->
 @endsection('javascript')

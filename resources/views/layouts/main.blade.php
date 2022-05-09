@@ -48,7 +48,7 @@
       <!-- header nav start here  -->
       <div class="">
           <nav class="navbar navbar-expand-lg navbar-light">
-              <img src="images/Corche_Logo.png">
+              <img src="{{ asset('images/Corche_Logo.png')}}">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
@@ -91,7 +91,7 @@
                             <button class="btn dropdown-toggle profile_button" type="button" id="dropdownMenu2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 style="background-color: transparent;">
-                                <img class="profile_avatar" src="images/profile_logo.jpg">{{ Auth::user()->name }} 
+                                <img class="profile_avatar" src="{{ asset('images/profile_logo.jpg')}}">{{ Auth::user()->name }} 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <button class="dropdown-item" type="button">Profile</button>
